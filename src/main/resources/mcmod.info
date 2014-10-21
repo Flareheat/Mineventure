@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mineventure",
+  "name": "Mineventure",
+  "description": "Get a brand new Minecraft experience!",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["AlphaSwittleTeam"],
+  "credits": "AlphaSwittleTeam for developing, yassine123 and madouf_ for ideas, Noxon for textures.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
