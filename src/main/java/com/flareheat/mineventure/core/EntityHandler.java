@@ -1,0 +1,57 @@
+package com.flareheat.mineventure.core;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.flareheat.mineventure.entity.monster.EntityDiamondGolem;
+import com.flareheat.mineventure.entity.monster.EntityEmeraldGolem;
+import com.flareheat.mineventure.entity.monster.EntityGoldGolem;
+import com.flareheat.mineventure.entity.monster.EntityLapisGolem;
+import com.flareheat.mineventure.entity.monster.EntityRedstoneGolem;
+import com.flareheat.mineventure.entity.monster.EntityStoneGolem;
+import com.flareheat.mineventure.entity.monster.EntityWoodGolem;
+import com.flareheat.mineventure.entity.passive.EntitySteve;
+import com.flareheat.mineventure.localization.Localization;
+import com.flareheat.mineventure.localization.node.DoubleNode;
+
+import cpw.mods.fml.common.registry.EntityRegistry;
+
+public class EntityHandler {
+	private final Logger logger = LogManager.getLogger("Mineventure/EntityHandler");
+
+	public void load() {
+		registerEntity();
+		registerSpawn();
+		registerLocalization();
+	}
+
+	private void registerEntity() {
+		EntityRegistry.registerGlobalEntityID(EntitySteve.class, "Steve", EntityRegistry.findGlobalUniqueEntityId(), 0x0066FF, 0x996600);
+		EntityRegistry.registerGlobalEntityID(EntityWoodGolem.class, "WoodGolem", EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerGlobalEntityID(EntityStoneGolem.class, "StoneGolem", EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerGlobalEntityID(EntityGoldGolem.class, "GoldGolem", EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerGlobalEntityID(EntityDiamondGolem.class, "DiamondGolem", EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerGlobalEntityID(EntityEmeraldGolem.class, "EmeraldGolem", EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerGlobalEntityID(EntityRedstoneGolem.class, "RedstoneGolem", EntityRegistry.findGlobalUniqueEntityId());
+		EntityRegistry.registerGlobalEntityID(EntityLapisGolem.class, "LapisGolem", EntityRegistry.findGlobalUniqueEntityId());
+	}
+
+	private void registerSpawn() {
+
+	}
+
+	private void registerLocalization() {
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "Steve", "steve", true));
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "WoodGolem", "wood_golem", true));
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "StoneGolem", "stone_golem", true));
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "GoldGolem", "gold_golem", true));
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "DiamondGolem", "diamond_golem", true));
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "EmeraldGolem", "emerald_golem", true));
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "RedstoneGolem", "redstone_golem", true));
+		Localization.addDoubleNode("en_US", new DoubleNode("entity", "LapisGolem", "lapis_golem", true));
+	}
+
+	public Logger getLogger() {
+		return logger;
+	}
+}
