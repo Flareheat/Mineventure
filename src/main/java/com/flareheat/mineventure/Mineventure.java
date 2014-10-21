@@ -120,8 +120,4 @@ public class Mineventure {
 	public static EvenementHandler getEvenementHandler() {
 		return evenementHandler;
 	}
-
-	public static boolean isObfuscated() {
-		return ObfuscationHelper.isObfuscated();
-	}
 }
