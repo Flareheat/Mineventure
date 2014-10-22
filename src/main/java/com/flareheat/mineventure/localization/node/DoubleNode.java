@@ -9,9 +9,9 @@ public class DoubleNode implements LocalizationNode {
 	private final String textToUse;
 	private final boolean usesName;
 
-	public DoubleNode(String type, String originalText, String textToUse, boolean usesName) {
+	public DoubleNode(String type, String text, String textToUse, boolean usesName) {
 		this.type = type;
-		text = originalText;
+		this.text = text;
 		this.textToUse = textToUse;
 		this.usesName = usesName;
 	}
