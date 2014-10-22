@@ -135,41 +135,19 @@ public class Localization {
 	}
 
 	public static int compare(LocalizationNode firstNode, LocalizationNode secondNode) {
-		if ((firstNode instanceof SimpleNode) && (secondNode instanceof SimpleNode)) {
-			final SimpleNode node1 = (SimpleNode) firstNode;
-			final SimpleNode node2 = (SimpleNode) secondNode;
-			final int i = node1.getType().length();
-			final int j = node2.getType().length();
-			final int k = Math.min(i, j);
-			final char[] arrayOfChar1 = node1.getType().toCharArray();
-			final char[] arrayOfChar2 = node2.getType().toCharArray();
-			for (int m = 0; m < k; m++) {
-				final int n = arrayOfChar1[m];
-				final int i1 = arrayOfChar2[m];
-				if (n != i1) {
-					return n - i1;
-				}
+		final int i = firstNode.getType().length();
+		final int j = secondNode.getType().length();
+		final int k = Math.min(i, j);
+		final char[] arrayOfChar1 = firstNode.getType().toCharArray();
+		final char[] arrayOfChar2 = secondNode.getType().toCharArray();
+		for (int m = 0; m < k; m++) {
+			final int n = arrayOfChar1[m];
+			final int i1 = arrayOfChar2[m];
+			if (n != i1) {
+				return n - i1;
 			}
-			return i - j;
-		} else if ((firstNode instanceof DoubleNode) && (secondNode instanceof DoubleNode)) {
-			final DoubleNode node1 = (DoubleNode) firstNode;
-			final DoubleNode node2 = (DoubleNode) secondNode;
-			final int i = node1.getType().length();
-			final int j = node2.getType().length();
-			final int k = Math.min(i, j);
-			final char[] arrayOfChar1 = node1.getType().toCharArray();
-			final char[] arrayOfChar2 = node2.getType().toCharArray();
-			for (int m = 0; m < k; m++) {
-				final int n = arrayOfChar1[m];
-				final int i1 = arrayOfChar2[m];
-				if (n != i1) {
-					return n - i1;
-				}
-			}
-			return i - j;
-		} else {
-			return -1;
 		}
+		return i - j;
 	}
 
 	private static String capitalize(String source) {
